@@ -6,8 +6,8 @@ const INITIAL_STATE = {
   defaultImg: true,
 };
 
-function gallery(state = INITIAL_STATE, action) {
-  switch (action.type) {
+function gallery(state = INITIAL_STATE, {type, data}) {
+  switch (type) {
   case REQUEST_API:
     return {
       ...state,
@@ -18,7 +18,7 @@ function gallery(state = INITIAL_STATE, action) {
     return {
       ...state,
       isLoading: false,
-      imgURL: action.data,
+      imgURL: data,
       defaultImg: false,
     };
   default:
